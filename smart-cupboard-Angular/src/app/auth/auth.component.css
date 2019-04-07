@@ -3,12 +3,13 @@
 	transform: translate(-50%, 0);
 	display: flex;
   flex-direction: column;
+  justify-content: center;
   position: relative;
   padding-top: 10px;
   width: 300px;
 }
 
-.form-container:h2 {
+h2 {
 	text-align: center;
 }
 

@@ -26,8 +26,6 @@ export class AuthComponent implements OnInit {
       password: ['', [
         Validators.required,
       ]],
-      firstName: '',
-      lastName: ''
     })
   }
 
