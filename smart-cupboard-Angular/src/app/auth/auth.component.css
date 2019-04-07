@@ -1,0 +1,23 @@
+.form-container {
+	left: 50%;
+	transform: translate(-50%, 0);
+	display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 10px;
+  width: 300px;
+}
+
+.form-container:h2 {
+	text-align: center;
+}
+
+button {
+	left: 50%;
+	transform: translate(-50%,0);
+	display: flex;
+  align-items: center;
+  position: absolute;
+	margin-top: 10px;
+	text-align: center;
+}
