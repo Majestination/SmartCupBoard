@@ -1,29 +1,64 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
+h1, h2, h3 {
+	text-align: center;
+}
+
 body, html {
-	width:  100%;
+	width: 100%;
 	height: 100%;
 	font-family: 'Poppins', sans-serif;
-	color: #222;
+	color: #fff;
 }
 
-.carousel-inner {
-	height: 500px;
+.background, header {
+	min-height: 1020px;
+	background-size: cover;
 }
 
-.carousel-inner img {
-transform: translateY(-30%);
-width: 100%;
-height: 100%;
+header {
+	position: relative;
+	background-image: url(https://cdna.artstation.com/p/assets/images/images/000/545/438/large/vladislav-ociacia-lab-new-1.jpg?1426290917);
 }
 
-.carousel-caption {
+.header_content {
 	position: absolute;
-	top: 50;
-	transform: translateY(-80%);
- 	text-shadow: 1px 1px 10px #000;
+	transform: translate(-50%, -70%);
+	top: 50%;
+	left: 50%;
 }
 
+.background {
+	background-color: rgba(68, 7, 90, 0.5);
+}
+
+.button_content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	margin-top: 20px;
+}
+
+.btn-lg {
+	margin-left: 10px;
+}
+
+.content_1, .content_2 {
+	padding: 50px 0;
+	background-color: rgba(68, 7, 90, 1);
+}
+
+.content_2 {
+	background-color: #792991;
+	padding: 20px 0 40px 0;
+}
+
+.col-md-4 {
+	color: #000;
+}
 
 #fixed {
 height: 400px;
@@ -39,19 +74,26 @@ background-size: cover;
 }
 
 .social a{
-font-size: 4em;
-padding: 20px;
+font-size: 40pt;
+padding: 5px 0 0 20px;
 }
+
 .fa-twitter {color: #00aced}
 .fa-google-plus-g {color: #dd4b39}
 
-.fa-twitter: hovver,.fa-google-plus-g: hovver {
-	color: #ccc;
-
+.fa-twitter:hover, .fa-google-plus-g:hover {
+	color: #eee;
+	transition: ease-out 0.25s;
 }
+
 footer {
 	background-color: #3f3f3f;
-	padding-top: 50px;
-	border-top: 4px solid silver;
+	padding: 20px 0 0 0;
+	border-top: 2px solid silver;
 	color: white;
+}
+
+.social {
+	display: flex;
+	justify-content: center;
 }
