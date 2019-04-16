@@ -1,0 +1,28 @@
+<div class="overlay">
+		<!--<button type="submit" (click)="addSector(cardText)">Click</button> -->
+	<mat-grid-list cols="5" rowHeight="500px" gutterSize="3px">
+	  <mat-grid-tile
+	      *ngFor="let sector of sectors"
+	      [colspan]="sector.cols"
+	      [rowspan]="sector.rows"
+	      [style.background]="sector.color">
+	    <div class="card_container">  
+				<div class="flip_card">
+					<div class="front">
+						<div class="White">
+							{{sector.text}}
+						</div>
+						<div class="indicator">
+							<p class="icons" *ngIf="sector.isHere"><i class="fas fa-check"></i></p>
+							<p class="icons" *ngIf="!sector.isHere"><i class="fas fa-times"></i></p>
+						</div> <!-- По идеи здесь должен был бить индикатор но он не очень виглядит, так что сделал так -->
+					</div>
+					<div class="back">
+						<h3>Some text</h3>
+						<p class="description">{{sector.description}}</p>
+					</div>
+				</div>
+	  	</div>
+	  </mat-grid-tile>
+	</mat-grid-list>
+</div>
