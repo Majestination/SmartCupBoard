@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormControl } from '@angular/forms';
 
-import { Sector } from 'E:/Project/angular/SmartCupBoard/smart-cupboard-Angular/src/environments/sector'
+import { Sector } from 'D:/Project/angular/SmartCupBoard/smart-cupboard-Angular/src/environments/sector'
 
 @Component({
   selector: 'app-monitoring',

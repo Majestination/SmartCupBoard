@@ -11,6 +11,10 @@ body, html {
 	color: #fff;
 }
 
+a {
+	
+}
+
 .background, header {
 	min-height: 1020px;
 	background-size: cover;

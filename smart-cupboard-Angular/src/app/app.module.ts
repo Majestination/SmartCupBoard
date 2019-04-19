@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AppRoutingModule } from './app-routing.module';
+import { MatDialogModule } from '@angular/material'
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
@@ -17,9 +18,9 @@ import { MonitoringComponent } from './monitoring/monitoring.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     MainPageComponent,
-    MonitoringComponent
+    MonitoringComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +31,11 @@ import { MonitoringComponent } from './monitoring/monitoring.component';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule,
   ],
   providers: [],
+  entryComponents: [AuthComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
