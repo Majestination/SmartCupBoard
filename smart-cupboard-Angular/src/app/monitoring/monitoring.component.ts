@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup , FormControl } from '@angular/forms';
-
-import { Sector } from 'D:/Project/angular/SmartCupBoard/smart-cupboard-Angular/src/environments/sector'
+import { FormGroup , FormControl, FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-monitoring',
@@ -10,21 +9,23 @@ import { Sector } from 'D:/Project/angular/SmartCupBoard/smart-cupboard-Angular/
 })
 export class MonitoringComponent implements OnInit {
 
-	sectors: Sector[] = [
-		{text: 'One', description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, soluta.' , cols: 1, rows: 1, isHere: true},
-		{text: 'Two', description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, id.' , cols: 1, rows: 1, isHere: false},
-		{text: 'Three', description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, doloribus?' , cols: 1, rows: 1, isHere: true},
-		{text: 'Four', description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, debitis.' , cols: 1, rows: 1, isHere: true},
-		{text: 'Five', description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ducimus!' , cols: 1, rows: 1, isHere: false}
-	];
+  ShelfIdForm: FormGroup;  
+	response: any;
 
-	addSector() {
-		this.sectors.push(new Sector()) 
-	}
+  constructor(private http: HttpClient, private fb: FormBuilder) { }
 
-  constructor() { }
+  onSubmit() {
+   this.http.get('/api/shelfs/' + this.ShelfIdForm.value.ShelfId + '/items')
+    .subscribe((response)=>{
+      this.response = response;
+      console.log(this.response);
+    })
+  }
 
   ngOnInit() {
+  this.ShelfIdForm = this.fb.group({
+      ShelfId: ['']
+    });
   }
 
 }

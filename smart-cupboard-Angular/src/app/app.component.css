@@ -5,3 +5,18 @@
 }
 
 .nav-link {font-size: 1.1em !important}
+
+.scroll {
+  width: 40px;
+  height: 65px; 
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  outline: none;
+  background-color: #F09C3C;
+  z-index: 1;
+}
+

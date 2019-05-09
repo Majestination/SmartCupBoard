@@ -6,8 +6,6 @@ export class Sector {
   isHere: boolean;
   	constructor() {
   		this.text = "title";
-  		this.cols = 1;
-  		this.rows = 1;
   		this.isHere = true;
   		this.description = '';
   	}

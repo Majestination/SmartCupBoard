@@ -1,28 +1,54 @@
 <div class="overlay">
-		<!--<button type="submit" (click)="addSector(cardText)">Click</button> -->
+  <mat-card>
+  	<form [formGroup]="ShelfIdForm" (ngSubmit)="onSubmit()">
+			<mat-form-field>
+      	<input matInput class="form-control" placeholder="Please, enter shelf Id" formControlName="ShelfId">
+    	</mat-form-field>
+    </form>
+  </mat-card>
 	<mat-grid-list cols="5" rowHeight="500px" gutterSize="3px">
 	  <mat-grid-tile
-	      *ngFor="let sector of sectors"
-	      [colspan]="sector.cols"
-	      [rowspan]="sector.rows"
-	      [style.background]="sector.color">
-	    <div class="card_container">  
-				<div class="flip_card">
-					<div class="front">
-						<div class="White">
-							{{sector.text}}
-						</div>
-						<div class="indicator">
-							<p class="icons" *ngIf="sector.isHere"><i class="fas fa-check"></i></p>
-							<p class="icons" *ngIf="!sector.isHere"><i class="fas fa-times"></i></p>
-						</div> <!-- По идеи здесь должен был бить индикатор но он не очень виглядит, так что сделал так -->
-					</div>
-					<div class="back">
-						<h3>Some text</h3>
-						<p class="description">{{sector.description}}</p>
-					</div>
+	      *ngFor="let item of response"
+	      [colspan]="1"
+	      [rowspan]="1">  
+			<div class="card">
+				<div class="White">
+					{{item.title}}
 				</div>
-	  	</div>
+				<ul>
+					<li>
+						id : {{item.id}}
+					</li>
+					<mat-divider></mat-divider>
+					<li>
+						rfid: {{item.rfid}}
+					</li>
+					<mat-divider ></mat-divider>
+					<li>
+						Created: {{item.createdAt | date: 'short'}}
+					</li>
+					<mat-divider ></mat-divider>
+					<li> 
+						Shelf: {{item.sector.shelf.title}}
+					</li>
+					<mat-divider ></mat-divider>
+					<li> 
+						Sector: {{item.sector.title}}
+					</li>
+					<mat-divider ></mat-divider>
+					<li> 
+						Reader: {{item.sector.reader.title}}
+					</li>
+					<li>
+						<div class="indicator">
+							<div *ngIf="item.itemStatuses === 'PUT'; else takenBlock">
+								<i class="fas fa-check"></i>
+							</div>
+						</div>
+						<ng-template #takenBlock><i class="fas fa-times"></i></ng-template>
+					</li>
+				</ul>
+			</div>
 	  </mat-grid-tile>
 	</mat-grid-list>
 </div>

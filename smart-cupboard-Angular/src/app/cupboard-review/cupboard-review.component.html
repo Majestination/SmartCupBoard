@@ -1,0 +1,14 @@
+<ul *ngFor="let item of response">
+	<a (click)="open()">
+	<mat-card>
+		<li> {{item.title}} : {{item.id}}</li>
+	</mat-card>	
+	</a>
+
+	<ul>
+		<mat-card *ngIf="isOpened"><li>{{item.shelf.title}} : {{item.shelf.id}}</li></mat-card>
+		<ul>
+			<mat-card><li>{{item.reader.title}} : {{item.reader.id}}</li></mat-card>
+		</ul>
+	</ul>
+</ul>
