@@ -15,7 +15,7 @@ export class MonitoringComponent implements OnInit {
   constructor(private http: HttpClient, private fb: FormBuilder) { }
 
   onSubmit() {
-   this.http.get('/api/shelfs/' + this.ShelfIdForm.value.ShelfId + '/items')
+   this.http.get(`/api/shelfs/${this.ShelfIdForm.value.ShelfId}/items`)
     .subscribe((response)=>{
       this.response = response;
       console.log(this.response);

@@ -1,14 +1,87 @@
-<ul *ngFor="let item of response">
-	<a (click)="open()">
-	<mat-card>
-		<li> {{item.title}} : {{item.id}}</li>
-	</mat-card>	
-	</a>
 
-	<ul>
-		<mat-card *ngIf="isOpened"><li>{{item.shelf.title}} : {{item.shelf.id}}</li></mat-card>
-		<ul>
-			<mat-card><li>{{item.reader.title}} : {{item.reader.id}}</li></mat-card>
-		</ul>
-	</ul>
-</ul>
+<button mat-button (click)="createCupboard()">Створити шафу</button>
+
+<mat-accordion>
+  <mat-expansion-panel class="main" *ngFor="let item of cupboards">
+    <mat-expansion-panel-header (click)="getShelf(item.id)">
+      <mat-panel-title>
+        {{item.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        id:{{item.id}} 
+      </mat-panel-description>
+    </mat-expansion-panel-header> <!-- Це й блок про шафи -->
+    <div class="icons">
+    	<mat-card class="delete icon" (click)="deleteCupboard(item.id)">
+    		<p>Delete</p>
+    		<i class="fas fa-times"></i>
+    	</mat-card>
+			<mat-card class="edit icon" (click)="updateCupboard(item.id)">
+				<p>Edit</p>
+				<i class="fas fa-clipboard-list"></i>
+			</mat-card>
+			<mat-card class="create icon" (click)="createShelf(item.id)">
+				<p>Create Shelf</p>
+			</mat-card>
+		</div>
+
+		<mat-accordion *ngIf='shelves'>
+			<mat-expansion-panel *ngFor="let shelf of shelves">
+				<mat-expansion-panel-header (click)="getSectors(shelf.id)">
+					<mat-panel-title>
+						{{shelf.title}}
+      		</mat-panel-title>
+      		<mat-panel-description>
+ 						id:{{shelf.id}}
+      		</mat-panel-description>
+			 	</mat-expansion-panel-header> <!-- Це й блок про полиці -->
+
+				<div class="icons">
+		    	<mat-card class="delete icon" (click)="deleteShefl(shelf.id)">
+		    		<p>Delete</p>
+		    		<i class="fas fa-times"></i>
+		    	</mat-card>
+					<mat-card class="edit icon" (click)="updateShelf(item.id, shelf.id)">
+						<p>Edit</p>
+						<i class="fas fa-clipboard-list"></i>
+					</mat-card>
+					<mat-card class="create icon">
+						<p>Create Sector</p>
+					</mat-card>
+				</div>
+
+				<mat-accordion *ngIf='sectors'>
+					<mat-expansion-panel *ngFor="let sector of sectors">
+						<mat-expansion-panel-header>
+							<mat-panel-title>
+								{{sector.title}}
+		      		</mat-panel-title>
+		      		<mat-panel-description>
+		 						id:{{sector.id}}
+		      		</mat-panel-description>
+					 	</mat-expansion-panel-header>
+
+						<div class="icons">
+				    	<mat-card class="delete icon" (click)="deleteSector(sector.id)">
+				    		<p>Delete</p>
+				    		<i class="fas fa-times"></i>
+				    	</mat-card>
+							<mat-card class="edit icon">
+								<p>Edit</p>
+								<i class="fas fa-clipboard-list"></i>
+							</mat-card>
+							<mat-card class="create icon">
+								<p>Create Reader</p>
+							</mat-card>
+						</div>
+
+					 	<p>{{sector.reader.title}} id:{{sector.reader.id}}</p>
+
+			 		</mat-expansion-panel>
+				</mat-accordion>
+
+	 		</mat-expansion-panel>
+			</mat-accordion>
+
+  </mat-expansion-panel>
+</mat-accordion>

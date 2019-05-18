@@ -1,9 +1,32 @@
-mat-card {
-	margin-top: 20px;
-	margin-right: 35px;
-	font-size: 1.3em
+.icons {
+	display: flex;
+	flex-direction: row;
+	padding-bottom:10px;
 }
 
-li {
-	list-style: none;
+.mat-expansion-panel-body {
+    padding: 0 0px 16px;
+}
+
+
+.icon {
+	height: 15px;
+	width: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	margin: 0 auto;
+}
+
+.edit {
+	background-color: green;
+}
+
+.delete {
+	background-color: red;
+}
+
+.create {
+	background-color: orange;
 }

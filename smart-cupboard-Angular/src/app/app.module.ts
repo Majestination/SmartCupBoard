@@ -12,7 +12,12 @@ import { MatDialogModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+
+import { CupboardServiceService } from './cupboard-service.service';
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
@@ -21,6 +26,11 @@ import { MonitoringComponent } from './monitoring/monitoring.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileTableComponent } from './profile-table/profile-table.component';
 import { CupboardReviewComponent } from './cupboard-review/cupboard-review.component';
+import { CreateCupboardComponent } from './create-cupboard/create-cupboard.component';
+import { CreateShelfComponent } from './create-shelf/create-shelf.component';
+import { CreateSectorComponent } from './create-sector/create-sector.component';
+import { UpdateShelfComponent } from './update-shelf/update-shelf.component';
+import { UpdateCupboardComponent } from './update-cupboard/update-cupboard.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +40,12 @@ import { CupboardReviewComponent } from './cupboard-review/cupboard-review.compo
     AuthComponent,
     RegistrationComponent,
     ProfileTableComponent,
-    CupboardReviewComponent
+    CupboardReviewComponent,
+    CreateCupboardComponent,
+    CreateShelfComponent,
+    CreateSectorComponent,
+    UpdateShelfComponent,
+    UpdateCupboardComponent
   ],
   imports: [
     BrowserModule,
@@ -46,10 +61,22 @@ import { CupboardReviewComponent } from './cupboard-review/cupboard-review.compo
     MatTableModule,
     MatPaginatorModule,
     HttpClientModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule,
+    MatSelectModule,
+    MatButtonToggleModule
   ],
-  providers: [],
-  entryComponents: [AuthComponent, RegistrationComponent],
+  providers: [ CupboardServiceService ],
+
+  entryComponents: [
+  AuthComponent,
+  RegistrationComponent,
+  CreateCupboardComponent,
+  CreateShelfComponent,
+  UpdateShelfComponent,
+  UpdateCupboardComponent
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
