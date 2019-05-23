@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
 import { CreateCupboardComponent } from '../create-cupboard/create-cupboard.component';
 import { CreateShelfComponent } from '../create-shelf/create-shelf.component';
+import { CreateSectorComponent } from '../create-sector/create-sector.component';
 import { UpdateShelfComponent } from '../update-shelf/update-shelf.component';
 import { UpdateCupboardComponent } from '../update-cupboard/update-cupboard.component';
 import { CupboardServiceService } from '../cupboard-service.service';
@@ -36,6 +37,14 @@ export class CupboardReviewComponent implements OnInit {
   createShelf(cupboardId: number) {
   this.cupboardService.setCupboardId(cupboardId);
     const dialogRef = this.Cupboard.open(CreateShelfComponent, {
+      width:'400px',
+      data: {}
+    });
+  }
+
+  createSector(shelfId: number) {
+  this.cupboardService.setShelfId(shelfId);
+    const dialogRef = this.Cupboard.open(CreateSectorComponent, {
       width:'400px',
       data: {}
     });

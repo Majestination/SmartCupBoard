@@ -2,18 +2,22 @@ h3 {
 	text-align: center;
 }
 
+p {
+	margin: 0;
+}
+
 li {
 	list-style-type: none;
-	font-size: 1.3em;
+	font-size: 1.4em;
 }
 
 ul {
 	padding: 0;
-	margin-top: 5px;
+	margin: auto 0;
 }
 
 mat-divider {
-	margin-left: -6%;
+	margin: 5px 0;
 }
 
 .overlay {
@@ -25,6 +29,7 @@ mat-divider {
   top: 0;
   background-color: #792991;
 }
+
 .card{
 	border: none;
 	display: flex;
@@ -47,7 +52,9 @@ mat-divider {
 	background-color: #fff;
 	color: #333;
 	border-radius: 3px 3px 0 0;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: 1.5em;
 }
 

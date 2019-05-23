@@ -44,8 +44,17 @@ createShelf (cupboardId: number, formValue: any) {
   	  this.http.post(`/api/cupboards/${cupboardId}/shelfs`, post, {headers: new HttpHeaders({'Content-type': 'application/json'})
     })
       .subscribe(data =>{
-        console.log(data)
+        console.log(data);
       });
+}
+
+createSector(shelfId: number, formValue: any) {
+	let post = { shelfId: shelfId, readerId:formValue.readerId, title: formValue.title };
+	this.http.post(`/api/cupboards/{cupboardId}/shelfs/{shelfId}/sectors`, post, {headers: new HttpHeaders({'Content-type': 'application/json'})
+})
+  .subscribe(data => {
+  	console.log(data);
+  });
 }
 
 getCupboards(): Observable<any> {
@@ -61,7 +70,11 @@ getSectors(shelfId: number): Observable<any> {
 }
 
 getDevices() {
-	return this.http.get(`/api/devices`)
+	return this.http.get(`/api/devices`);
+}
+
+getItems(shelfId: number) {
+	return this.http.get(`/api/shelfs/${shelfId}/items`);
 }
 
 updateCupboard(id: number, data: any) {

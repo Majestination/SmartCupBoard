@@ -1,4 +1,4 @@
-
+<div class="overlay">
 <button mat-button (click)="createCupboard()">Створити шафу</button>
 
 <mat-accordion>
@@ -45,7 +45,7 @@
 						<p>Edit</p>
 						<i class="fas fa-clipboard-list"></i>
 					</mat-card>
-					<mat-card class="create icon">
+					<mat-card class="create icon" (click)="createSector(shelf.id)">
 						<p>Create Sector</p>
 					</mat-card>
 				</div>
@@ -69,9 +69,6 @@
 							<mat-card class="edit icon">
 								<p>Edit</p>
 								<i class="fas fa-clipboard-list"></i>
-							</mat-card>
-							<mat-card class="create icon">
-								<p>Create Reader</p>
 							</mat-card>
 						</div>
 

@@ -1,13 +1,26 @@
+.overlay {
+  margin-top: 58px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #792991;
+}
+
 .icons {
 	display: flex;
 	flex-direction: row;
 	padding-bottom:10px;
 }
 
-.mat-expansion-panel-body {
-    padding: 0 0px 16px;
+::ng-deep .mat-expansion-panel-body {
+  padding: 0 !important;
 }
 
+p {
+	padding-left: 24px;
+}
 
 .icon {
 	height: 15px;

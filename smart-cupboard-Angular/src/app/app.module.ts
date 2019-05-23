@@ -16,6 +16,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { ToastrModule } from 'ngx-toastr';
 
 import { CupboardServiceService } from './cupboard-service.service';
 
@@ -64,7 +65,8 @@ import { UpdateCupboardComponent } from './update-cupboard/update-cupboard.compo
     MatDividerModule,
     MatExpansionModule,
     MatSelectModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    ToastrModule.forRoot(),
   ],
   providers: [ CupboardServiceService ],
 
@@ -74,7 +76,8 @@ import { UpdateCupboardComponent } from './update-cupboard/update-cupboard.compo
   CreateCupboardComponent,
   CreateShelfComponent,
   UpdateShelfComponent,
-  UpdateCupboardComponent
+  UpdateCupboardComponent,
+  CreateSectorComponent
   ],
 
   bootstrap: [AppComponent]
